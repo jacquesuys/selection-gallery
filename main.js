@@ -24,8 +24,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
 		$divs[i].addEventListener('click', function(){
 			var $i = this.dataset.i;
+			var $indexOf = selected.indexOf($i);
+
 			if ( selected.length < 10 ) {
-				var $indexOf = selected.indexOf($i);
 				if ( $indexOf < 0 ) {
 					selected.push($i);
 					console.log(selected);
@@ -33,6 +34,10 @@ document.addEventListener("DOMContentLoaded", function(){
 					selected.splice($indexOf, 1);
 					console.log(selected);
 				}
+				$divs[$i].classList.toggle('selected');
+			} else if (selected.length === 10 && $indexOf > 0) {
+				selected.splice($indexOf, 1);
+				console.log(selected);
 				$divs[$i].classList.toggle('selected');
 			}
 		});
