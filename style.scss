@@ -1,5 +1,15 @@
 @import 'reset';
 
+$bp-small : 24em;
+$bp-small-2 : 29.75em;
+$bp-small-3 : 39.8em;
+$bp-med : 46.8em;
+$bp-med-2 : 48em;
+$bp-large : 50em;
+$bp-large-2 : 54.5em;
+$bp-xl : 60em;
+$bp-xl-2 : 67em;
+
 @mixin clearfix {
   &:after {
     content: "";
@@ -49,6 +59,7 @@ header {
 		top: 39px;
 		left: -100%;
 		background-color: rgba(0, 0, 0, 0.5);
+		transition: left 0.25s ease-in;
 
 		ul {
 			list-style: none;
@@ -77,10 +88,27 @@ section {
 	@include clearfix;
 	padding-top: 39px;
 
+	@media all and (min-width: $bp-small-3) {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
 	& > div {
 		float: left;
 		width: 50%;
 		padding: 5px;
+
+		@media all and (min-width: $bp-small) {
+			width: 100 / 3 * 1%;
+		}
+
+		@media all and (min-width: $bp-small-2) {
+			width: 100 / 4 * 1%;
+		}
+
+		@media all and (min-width: $bp-small-3) {
+			width: 100 / 5 * 1%;
+		}
 	}
 }
 
