@@ -52,35 +52,60 @@ header {
 	}
 
 	nav {
-		height: 100%;
-		height: 100vh;
-		width: 65%;
-		position: absolute;
-		top: 39px;
-		left: -100%;
-		background-color: rgba(0, 0, 0, 0.5);
-		transition: left 0.25s ease-in;
+		float: right;
 
 		ul {
 			list-style: none;
-			margin: 0;
-			padding: 0;
 
 			li {
-				line-height: 1.25rem;
-				border-bottom: solid 1px rgba(0, 0, 0, 0.25);
+				float: left;
 				padding: 9px 5px;
-
-				a {
-					color: #fff;
-					text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
-				}
+				line-height: 1.25rem;
 			}
 		}
 	}
 
-	&.menu-open nav {
-		left: 0;
+	@media all and (max-width: $bp-small-2) {
+		nav {
+			height: 100%;
+			height: 100vh;
+			width: 65%;
+			position: absolute;
+			top: 39px;
+			left: -100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			transition: left 0.25s ease-in;
+
+			ul {
+				margin: 0;
+				padding: 0;
+
+				li {
+					border-bottom: solid 1px rgba(0, 0, 0, 0.25);
+
+					a {
+						color: #fff;
+						text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+					}
+				}
+			}
+		}
+
+		&.menu-open nav {
+			left: 0;
+		}
+	}
+
+
+	@media all and (min-width: $bp-small-2) {
+		h1 {
+			float: left;
+			margin-left: 10px;
+		}
+
+  	& > a {
+  		display: none;
+  	}
 	}
 }
 
