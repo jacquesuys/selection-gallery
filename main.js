@@ -5,6 +5,12 @@ document.addEventListener("DOMContentLoaded", function(){
 		return document.querySelectorAll(element);
 	};
 
+	var $menu = $('header > a')[0];
+
+	$menu.addEventListener('click', function(){
+		console.log('clicked');
+	})
+
 	var $divs = $('section > div');
 
 	for (var i = 0; i < $divs.length; i++) {
@@ -18,11 +24,12 @@ document.addEventListener("DOMContentLoaded", function(){
 		$divs[i].addEventListener('click', function(){
 			var $i = this.dataset.i;
 			if ( selected.length < 10 ) {
-				if ( selected.indexOf($i) < 0 ) {
+				var $indexOf = selected.indexOf($i);
+				if ( $indexOf < 0 ) {
 					selected.push($i);
 					console.log(selected);
 				} else {
-					selected.splice($i, 1);
+					selected.splice($indexOf, 1);
 					console.log(selected);
 				}
 				$divs[$i].classList.toggle('selected');
