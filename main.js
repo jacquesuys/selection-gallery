@@ -1,17 +1,18 @@
 document.addEventListener("DOMContentLoaded", function(){
-	var selected = [];
 
 	var $ = function(element) {
 		return document.querySelectorAll(element);
 	};
 
 	var $menu = $('header > a')[0];
+	var $header = $('header')[0];
 
 	$menu.addEventListener('click', function(){
-		console.log('clicked');
-	})
+		$header.classList.toggle('menu-open');
+	});
 
 	var $divs = $('section > div');
+	var selected = [];
 
 	for (var i = 0; i < $divs.length; i++) {
 		$divs[i].dataset.i = i;
