@@ -11,12 +11,15 @@ document.addEventListener("DOMContentLoaded", function(){
 		$divs[i].dataset.i = i;
 		$divs[i].addEventListener('click', function(){
 			var $i = this.dataset.i;
-			if ( selected.indexOf($i) < 0 && selected.length < 10 ) {
-				selected.push($i);
-				console.log(selected);
-			} else {
-				selected.splice($i, 1);
-				console.log(selected);
+			if ( selected.length < 10 ) {
+				if ( selected.indexOf($i) < 0 ) {
+					selected.push($i);
+					console.log(selected);
+				} else {
+					selected.splice($i, 1);
+					console.log(selected);
+				}
+				$divs[$i].classList.toggle("selected");
 			}
 		});
 	}
