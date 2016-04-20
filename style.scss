@@ -28,6 +28,7 @@ body {
 
 a {
 	text-decoration: none;
+	color: rgb(100, 100, 100);
 }
 
 header {
@@ -174,4 +175,8 @@ section {
 footer {
 	text-align: center;
 	padding-bottom: 30px;
+
+	a {
+		text-decoration: underline;
+	}
 }
